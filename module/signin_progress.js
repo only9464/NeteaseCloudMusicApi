@@ -1,6 +1,8 @@
 // 签到进度
 
 module.exports = (query, request) => {
+  query.cookie.os = 'ios'
+  query.cookie.appver = '9.0.65'
   const data = {
     moduleId: query.moduleId || '1207signin-1207signin',
   }
@@ -11,6 +13,7 @@ module.exports = (query, request) => {
     {
       crypto: 'weapi',
       cookie: query.cookie,
+      ua: query.ua || '',
       proxy: query.proxy,
       realIP: query.realIP,
     },
